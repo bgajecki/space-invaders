@@ -11,7 +11,7 @@ void Player::Shoot()
 	int i = -1;
 	if (bullet.size() > 0)
 	{
-		for (unsigned j = 0; j < bullet.size() - 1; ++j)
+		for (unsigned j = 0; j < bullet.size(); ++j)
 		{
 			if (bullet[j] == nullptr)
 			{

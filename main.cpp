@@ -152,7 +152,7 @@ void CreateAsteroid(int t)
 	int i = -1;
 	if (asteroid.size() > 0)
 	{
-		for (unsigned j = 0; j < asteroid.size() - 1; ++j)
+		for (unsigned j = 0; j < asteroid.size(); ++j)
 		{
 			if (asteroid[j] == nullptr)
 			{
@@ -189,7 +189,7 @@ void Time(int t)
 		{
 			if (isCollision(i->object, player.object))
 			{
-				std::string text = "Zosta³eœ trafiony przez asteroide.\nZestrzeli³eœ " + std::to_string(score) + " asteroid.";
+				std::string text = "Zostaï¿½eï¿½ trafiony przez asteroide.\nZestrzeliï¿½eï¿½ " + std::to_string(score) + " asteroid.";
 				MessageBoxA(0, const_cast<char*>(text.c_str()), "Niestety!", 0);
 				exit(0);
 			}
