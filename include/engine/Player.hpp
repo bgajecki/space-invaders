@@ -9,7 +9,7 @@ public:
 	void Shoot();
 
 	//bullet
-	std::vector<std::unique_ptr<Bullet>> bullet;
+	std::vector<std::unique_ptr<Bullet>> bullets;
 	GLuint bulletTexture;
 	float bulletWidth, bulletHeight, bulletSpeed;
 };

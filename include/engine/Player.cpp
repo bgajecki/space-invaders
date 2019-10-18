@@ -9,27 +9,27 @@ void Player::Move(float x)
 void Player::Shoot()
 {
 	int i = -1;
-	if (bullet.size() > 0)
+	if (bullets.size() > 0)
 	{
-		for (unsigned j = 0; j < bullet.size(); ++j)
+		for (unsigned j = 0; j < bullets.size(); ++j)
 		{
-			if (bullet[j] == nullptr)
+			if (bullets[j] == nullptr)
 			{
-				bullet[j] = std::make_unique<Bullet>();
+				bullets[j] = std::make_unique<Bullet>();
 				i = j;
 			}
 		}
 	}
 	if (i == -1)
 	{
-		bullet.push_back(std::make_unique<Bullet>());
-		i = bullet.size() - 1;
+		bullets.push_back(std::make_unique<Bullet>());
+		i = bullets.size() - 1;
 	}
 
-	this->bullet[i]->object.x = this->object.x + (this->object.width / 2.0f) - 0.015f;
-	this->bullet[i]->object.y = this->object.y + this->object.height;
-	this->bullet[i]->object.width = this->bulletWidth;
-	this->bullet[i]->object.height = this->bulletHeight;
-	this->bullet[i]->object.texture = this->bulletTexture;
-	this->bullet[i]->speed = this->bulletSpeed;
+	this->bullets[i]->object.x = this->object.x + (this->object.width / 2.0f) - 0.015f;
+	this->bullets[i]->object.y = this->object.y + this->object.height;
+	this->bullets[i]->object.width = this->bulletWidth;
+	this->bullets[i]->object.height = this->bulletHeight;
+	this->bullets[i]->object.texture = this->bulletTexture;
+	this->bullets[i]->speed = this->bulletSpeed;
 }

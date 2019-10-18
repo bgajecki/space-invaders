@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Head.hpp"
+#include "Object.hpp"
 
 class Bullet : public Object
 {

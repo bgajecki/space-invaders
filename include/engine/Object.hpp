@@ -2,8 +2,6 @@
 
 #include <GL/glut.h>
 #include <Windows.h>
-#include <cstdio>
-#include <cstdlib>
 #include <ctime>
 #include <vector>
 #include <memory>

@@ -1,4 +1,4 @@
-#include "Head.hpp"
+#include "Object.hpp"
 
 void Object::Paint()
 {

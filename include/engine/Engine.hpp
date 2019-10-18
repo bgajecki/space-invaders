@@ -2,12 +2,32 @@
 
 #include "Player.hpp"
 #include "Asteroids.hpp"
+#include "Constants.hpp"
 
-bool isCollision(Object_t& o1, Object_t& o2)
+class GameProcess
 {
-	if (o1.x < o2.x + o2.width && o1.x + o1.width > o2.x
-		&& o1.y < o2.y + o2.height && o1.y + o1.height > o2.y)
-		return true;
-	else
-		return false;
-}
+public:
+	GameProcess();
+
+	void Display();
+	void Reshape(int, int);
+	void Special(int, int, int);
+	void Keyboard(unsigned char, int, int);
+	void Loop(int);
+	void CreateAsteroid(int);
+	void Time(int);
+
+private:
+	bool isCollision(Object_t&, Object_t&);
+	bool isCollision(Object&, Object&);
+	GLuint loadTexture(const char*);
+	float calibrateWidth(float);
+	float calibrateHeight(float);
+	float calibratePosX(float);
+	float calibratePosY(float);
+
+	Player player;
+	std::vector<std::unique_ptr<Asteroid>> asteroids;
+	GLuint asteroidTexture[3];
+	unsigned score = 0;
+};
